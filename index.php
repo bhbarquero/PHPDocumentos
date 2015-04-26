@@ -1,4 +1,8 @@
 <?php
+
+	require("handlers/home_handler.php");
+	require("handlers/login_handler.php");
+
 	require("lib/markdown.php");
 	require("lib/mysql.php");
 	require("lib/queries.php");
@@ -9,7 +13,8 @@
 	});
 
 	Toro::serve(array(
-    	"/" => "ArticlesHandler",
+		"/PHPDocumentos/" => "LoginHandler",
+		"/PHPDocumentos/my-files" => "HomeHandler",
     	"/article/:alpha" => "ArticleHandler",
     	"/article/:alpha/comment" => "CommentHandler",
     	"/article/new" => "NewArticleHandler"
