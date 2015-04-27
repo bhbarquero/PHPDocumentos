@@ -13,7 +13,8 @@
 	});
 
 	Toro::serve(array(
-		"/PHPDocumentos/" => "LoginHandler",
+		//"/PHPDocumentos/" => "LoginHandler",
+		"/PHPDocumentos/" => "HomeHandler",
 		"/PHPDocumentos/my-files" => "HomeHandler",
     	"/article/:alpha" => "ArticleHandler",
     	"/article/:alpha/comment" => "CommentHandler",
