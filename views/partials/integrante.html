@@ -1,0 +1,25 @@
+  <div id="main" class="pure-u-1">
+		{{# integrante}}
+        <div class="email-content">
+            <div class="email-content-header pure-g">
+                 <img class="email-avatar" alt="Yahoo! News&#x27; avatar" height="64" width="64" src="../../img/common/usuario.png">
+                <div class="pure-u-1-2">
+                    <h1 class="email-content-title">{{subject}}</h1>
+                    <p class="email-content-subtitle">
+                        Nombre de Usuario: <a>{{NombreUsuario}}</a> , IdUsuario: {{IdUsuario}}</span>
+                    </p>
+                </div>
+
+               <!-- <div class="email-content-controls pure-u-1-2">
+                    <button class="secondary-button pure-button">Descargar</button>
+                    <button class="secondary-button pure-button">Compartir</button>
+                    <button class="secondary-button pure-button">Eliminar</button>
+                </div>-->
+            </div>
+
+            <div class="email-content-body">
+              {{body}}
+            </div>
+        </div>
+		{{/ integrante}}
+    </div>

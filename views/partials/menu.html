@@ -1,0 +1,34 @@
+    <div id="nav" class="pure-u">
+        <a href="#" class="nav-menu-button">Menu</a>
+
+        <div class="nav-inner">
+            <button class="primary-button pure-button">Compose</button>
+
+            <div class="pure-menu">
+                <li class="pure-menu-heading">Mis Unidades</li>
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item"><a href="../MiUnidad/" class="pure-menu-link">Mi Unidad</a></li>
+                    <li class="pure-menu-item"><a href="../Compartido/" class="pure-menu-link">Compartido</a></li>
+                </ul>
+            </div>
+            <br/>
+            
+            <div class="pure-menu">
+                <li class="pure-menu-heading"> Mis Grupos </li>
+                <ul class="pure-menu-list">
+                    {{# grupos}}
+                    <li class="pure-menu-item"><a href="../MisGrupos/{{IdGrupo}}" class="pure-menu-link">{{ Descripcion }}</a></li>
+                    {{/ grupos}}
+                </ul>
+            </div>
+
+            <div class="pure-menu">
+                <li class="pure-menu-heading"> Mis Etiquetas </li>
+                <ul class="pure-menu-list">
+                    {{# etiquetas}}
+                    <li class="pure-menu-item"><a href="../MisEtiquetas/{{IdEtiqueta}}" class="pure-menu-link">{{ Descripcion }}</a></li>
+                    {{/ etiquetas}}
+                </ul>
+            </div>
+        </div>
+    </div>

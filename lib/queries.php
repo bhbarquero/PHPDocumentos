@@ -1,36 +1,71 @@
 <?php
 
-function get_articles() {
-    $query = MySQL::getInstance()->query("SELECT * FROM articles ORDER BY published DESC");
-    return $query->fetchAll();
-}
-
-function get_article_by_slug($slug) {
-    $query = MySQL::getInstance()->prepare("SELECT * FROM articles WHERE slug=:slug");
-    $query->bindValue(':slug', $slug, PDO::PARAM_STR);
-    $query->execute();
-    return $query->fetch(PDO::FETCH_ASSOC);
-}
-
-function get_article_comments($article_id) {
-    $query = MySQL::getInstance()->prepare("SELECT * FROM comments WHERE article_id=:article_id ORDER BY posted ASC");
-    $query->bindValue(':article_id', $article_id, PDO::PARAM_INT);
+function get_carpetas($idUsuario) {
+    $query = SQLite::getInstance()->query('SELECT * FROM TbCarpeta where IdUsuario=:idUsuario');
+    $query->bindValue(':idUsuario', $idUsuario, PDO::PARAM_INT);
+    //return $query->fetchAll();
     $query->execute();
     return $query->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function save_comment($article_id, $name, $body) {
-    $query = MySQL::getInstance()->prepare("INSERT INTO comments (article_id, name, body) VALUES (:article_id, :name, :body)");
-    $query->bindValue(':article_id', $article_id, PDO::PARAM_INT);
-    $query->bindValue(':name', $name, PDO::PARAM_STR);
-    $query->bindValue(':body', $body, PDO::PARAM_STR);
+function get_integrantes($idGrupo) {
+    $query = SQLite::getInstance()->query('SELECT * FROM tbUsuario where idUsuario in(select idUsuario from tbUsuariosXgrupo where idgrupo=:idGrupo)');
+    $query->bindValue(':idGrupo', $idGrupo, PDO::PARAM_INT);
+    //return $query->fetchAll();
     $query->execute();
+    return $query->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function save_article($title, $slug, $body) {
-    $query = MySQL::getInstance()->prepare("INSERT INTO articles (title, slug, body) VALUES (:title, :slug, :body)");
-    $query->bindValue(':title', $title, PDO::PARAM_STR);
-    $query->bindValue(':slug', $slug, PDO::PARAM_STR);
-    $query->bindValue(':body', $body, PDO::PARAM_STR);
+function get_carpetasXetiqueta($idetiqueta) {
+    $query = SQLite::getInstance()->query('SELECT * FROM tbCarpeta where idCarpeta in(SELECT idCarpeta FROM tbetiquetasxcarpeta where idetiqueta=:idetiqueta)');
+    $query->bindValue(':idetiqueta', $idetiqueta, PDO::PARAM_INT);
+    //return $query->fetchAll();
     $query->execute();
+    return $query->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+function get_integrante($idIntegrante) {
+    $query = SQLite::getInstance()->query('SELECT * FROM tbUsuario where idUsuario =:idIntegrante');
+    $query->bindValue(':idIntegrante', $idIntegrante, PDO::PARAM_INT);
+    //return $query->fetchAll();
+    $query->execute();
+    return $query->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function get_archivos($idCarpeta) {
+    $query = SQLite::getInstance()->query('SELECT * FROM TbDocumento where IdCarpeta=:idCarpeta');
+    $query->bindValue(':idCarpeta', $idCarpeta, PDO::PARAM_INT);
+    //return $query->fetchAll();
+    $query->execute();
+    return $query->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function get_grupos() {
+    $query = SQLite::getInstance()->query("SELECT * FROM TbGrupo");
+    return $query->fetchAll();
+}
+
+function get_etiquetas() {
+    $query = SQLite::getInstance()->query("SELECT * FROM TbEtiqueta");
+    return $query->fetchAll();
+}
+
+function get_categories() {
+    $query = SQLite::getInstance()->query("SELECT * FROM mailbox");
+    return $query->fetchAll();
+}
+
+function get_items_bycat($pos) {
+    $query = SQLite::getInstance()->prepare("SELECT * FROM mailmessage WHERE cat_id=:pos");
+    $query->bindValue(':pos', strval($pos), PDO::PARAM_STR);
+    $query->execute();
+    return $query->fetchAll();
+}
+
+function get_detail_bypos($pos) {
+    $query = SQLite::getInstance()->prepare("SELECT * FROM mailmessage WHERE rowid=:pos");
+    $query->bindValue(':pos', strval($pos), PDO::PARAM_STR);
+    $query->execute();
+    return $query->fetch(PDO::FETCH_ASSOC);
 }
