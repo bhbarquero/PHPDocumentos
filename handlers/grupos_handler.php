@@ -7,6 +7,7 @@ class GruposHandler {
 		$grupos= get_grupos();
 		$etiquetas=get_etiquetas();
 		$integrantes=get_integrantes($idGrupo);
+		
 		echo $mstch->render('principal', array(
      	'integrantes' => $integrantes,
      	'grupos' => $grupos,
