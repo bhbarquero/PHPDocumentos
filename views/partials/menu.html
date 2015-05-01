@@ -1,34 +1,35 @@
-    <div id="nav" class="pure-u col-md-4">
-        <a href="#" class="nav-menu-button">Menu</a>
-
-        <div class="nav-inner">
-            <button class="primary-button pure-button">Compose</button>
-
-            <div class="pure-menu">
-                <li class="pure-menu-heading">Mis Unidades</li>
-                <ul class="pure-menu-list">
-                    <li class="pure-menu-item"><a href="../MiUnidad/" class="pure-menu-link">Mi Unidad</a></li>
-                    <li class="pure-menu-item"><a href="../Compartido/" class="pure-menu-link">Compartido</a></li>
-                </ul>
-            </div>
-            <br/>
-            
-            <div class="pure-menu">
-                <li class="pure-menu-heading"> Mis Grupos </li>
-                <ul class="pure-menu-list">
-                    {{# grupos}}
-                    <li class="pure-menu-item"><a href="../MisGrupos/{{IdGrupo}}" class="pure-menu-link">{{ Descripcion }}</a></li>
-                    {{/ grupos}}
-                </ul>
-            </div>
-
-            <div class="pure-menu">
-                <li class="pure-menu-heading"> Mis Etiquetas </li>
-                <ul class="pure-menu-list">
-                    {{# etiquetas}}
-                    <li class="pure-menu-item"><a href="../MisEtiquetas/{{IdEtiqueta}}" class="pure-menu-link">{{ Descripcion }}</a></li>
-                    {{/ etiquetas}}
-                </ul>
-            </div>
-        </div>
+<!-- Menu toggle -->
+<a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+    </a>
+<div id="menu">
+    <div class="pure-menu">
+        <li class="pure-menu-heading">Unidades</li>
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item">
+                <a href="../MiUnidad/" class="pure-menu-link">
+                    <i class="fa fa-folder fa-lg"></i>&nbsp;Mi Unidad</a>
+            </li>
+            <li class="pure-menu-item">
+                <a href="../Compartido/" class="pure-menu-link"><i class="fa fa-users fa-lg"></i>&nbsp;Compartido conmigo</a>
+            </li>
+        </ul>
     </div>
+    <br/>
+    <div class="pure-menu">
+        <li class="pure-menu-heading">Grupos</li>
+        <ul class="pure-menu-list">{{# grupos}}
+            <li class="pure-menu-item">
+                <a href="../MisGrupos/{{IdGrupo}}" class="pure-menu-link"><i class="fa fa-rss"></i>&nbsp;{{ Descripcion }}</a>
+            </li>{{/ grupos}}</ul>
+    </div>
+    <br/>
+    <div class="pure-menu">
+        <li class="pure-menu-heading">Etiquetas</li>
+        <ul class="pure-menu-list">{{# etiquetas}}
+            <li class="pure-menu-item">
+                <a href="../MisEtiquetas/{{IdEtiqueta}}" class="pure-menu-link"><i class="fa fa-tag fa-lg"></i>&nbsp;{{ Descripcion }}</a>
+            </li>{{/ etiquetas}}</ul>
+    </div>
+</div>
