@@ -33,10 +33,10 @@ Toro::serve(array(
    // "/" => "CategoriesHandler",
     //"/category/:alpha" => "ItemsHandler",
     //"/category/:alpha/comment" => "DetailHandler"
-    "/" => "MenuHandler",
-    "/MiUnidad/" => "CarpetasHandler",
-    "/Carpeta/:alpha" => "ArchivosHandler",
-    "/MisGrupos/:alpha" => "GruposHandler",
-    "/MisEtiquetas/:alpha" => "EtiquetasHandler",
-    "/integrante/:alpha" => "IntegrantesHandler"
+    "/PHPDocumentos/" => "MenuHandler",
+    "/PHPDocumentos/MiUnidad/" => "CarpetasHandler",
+    "/PHPDocumentos/Carpeta/:alpha" => "ArchivosHandler",
+    "/PHPDocumentos/MisGrupos/:alpha" => "GruposHandler",
+    "/PHPDocumentos/MisEtiquetas/:alpha" => "EtiquetasHandler",
+    "/PHPDocumentos/integrante/:alpha" => "IntegrantesHandler"
 ));
