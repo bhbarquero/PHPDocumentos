@@ -6,7 +6,6 @@
 	padding:0!important;
 	border-right: 1px solid #ccc;
 	margin-top:80px;
-	position:fixed;
 	overflow-y: auto;
 	
 }
@@ -17,7 +16,7 @@
 }
 
 .accion{
-	margin-right: 10px;
+	margin-right: 15px;
 	margin-top: 14px;
 }
 
@@ -45,4 +44,32 @@
 	border-right: 5px solid #888;
 	background-color: #ccc;
 	
+}
+
+/*ARCHIVOS*/
+
+#files{
+	background-color: #eee;
+	height: 100%;
+	padding:0!important;
+	border-right: 1px solid #ccc;
+	margin-top:80px;
+	overflow-y: auto;
+	
+}
+
+.archivo{
+	margin:10px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+.archivo .datos{
+	margin-top: 10px;
+}
+
+.archivo:hover,
+.archivo:focus{
+	border:1px solid #1b98f8;
+	border-radius: 25px;
 }

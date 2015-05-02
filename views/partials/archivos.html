@@ -1,24 +1,25 @@
-    <div id="files" class="col-md-3">
-		{{# archivos}}
-        <div class="email-content">
-            <div class="email-content-header pure-g">
-                <div class="pure-u-1-2">
-                    <h1 class="email-content-title">{{subject}}</h1>
-                    <p class="email-content-subtitle">
-                        Archivo: <a>{{Descripcion}}</a> , Fecha de Creacion: {{FechaCreacion}}</span>
-                    </p>
-                </div>
-
-                <div class="email-content-controls pure-u-1-2">
-                    <button class="secondary-button pure-button">Descargar</button>
-                    <button class="secondary-button pure-button">Compartir</button>
-                    <button class="secondary-button pure-button">Eliminar</button>
-                </div>
-            </div>
-
-            <div class="email-content-body">
-              {{body}}
-            </div>
-        </div>
-		{{/ archivos}}
+<div id="files" class="col-md-10">
+    <div class="acciones">
+        <a href="#"><i class="fa  fa-share-alt fa-lg derecha accion"></i></a>
+        <a href="#"><i class="fa fa-download fa-lg derecha accion"></i></a>
+        <a href="#"><i class="fa fa-trash-o fa-lg derecha accion"></i></a>
+        <a href="#"><i class="fa fa-pencil-square-o fa-lg derecha accion"></i></a>
+        <a href="#"><i class="fa fa-plus fa-lg derecha accion"></i></a>
     </div>
+    <div class="archivos">{{# archivos}}
+        <div class="archivo col-md-2">
+            <center>
+                <i class="fa fa-file fa-3x"></i>
+                <br/>
+                <div class="datos">
+                    <span>{{Descripcion}}</span>
+                    <br/>
+                    <span>Creado en: {{FechaCreacion}}</span>
+                </div>
+            </center>
+        </div>{{/ archivos}}</div>
+    <!--<div class="acciones">
+<button class="secondary-button pure-button">Descargar</button>
+<button class="secondary-button pure-button">Compartir</button>
+<button class="secondary-button pure-button">Eliminar</button>
+</div>-->

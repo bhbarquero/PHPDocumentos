@@ -5,7 +5,7 @@ class LoginHandler {
 		
 		global $mstch;
 		$_SESSION["usuarioId"]=1;
-		$_SESSION["usuario"]="usuario";
+		$_SESSION["usuario"]="usuario1";
 		
 		if(isset($_SESSION["usuarioId"]))
 			header('Location:/PHPDocumentos/MiUnidad/');
