@@ -9,6 +9,7 @@ require("handlers/items_handler.php");
 require("handlers/detail_handler.php");
 require("handlers/miunidad_handler.php");
 require("handlers/login_handler.php");
+require("handlers/singout_handler.php");
 require("handlers/carpeta_handler.php");
 require("handlers/grupos_handler.php");
 require("handlers/integrantes_handler.php");
@@ -38,6 +39,7 @@ Toro::serve(array(
     //"/category/:alpha" => "ItemsHandler",
     //"/category/:alpha/comment" => "DetailHandler"
     "/PHPDocumentos/" => "LoginHandler",
+    "/PHPDocumentos/SingOut/" => "SingOutHandler",
     "/PHPDocumentos/MiUnidad/" => "MiUnidadHandler",
     "/PHPDocumentos/Carpeta/:alpha" => "CarpetaHandler",
     "/PHPDocumentos/MisGrupos/:alpha" => "GruposHandler",
