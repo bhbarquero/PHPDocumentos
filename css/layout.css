@@ -32,11 +32,14 @@ The content `<div>` is where all your content goes.
 */
 header{
     height: 80px;
+    width: 100%;
     border-bottom: 1px solid silver;
     box-shadow: 0px 5px 2px #888888;
     z-index: 12000;
     padding-top: 17px;
     color:  #337AB7;
+    top:0px;
+    position: fixed;
 }
 
 
@@ -88,7 +91,7 @@ appears on the left side of the page.
     -webkit-overflow-scrolling: touch;
     margin-top:80px;
     background-color: #eee;
-    border-right: 1px solid #ccc;
+    border-right: 5px solid #ccc;
 }
     /*
     All anchors inside the menu should be styled like this.

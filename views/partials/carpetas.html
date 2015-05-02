@@ -1,17 +1,20 @@
-     <div id="direct" class="col-md-3">
-        {{# carpetas}}
-        <!--<h2>Carpeta</h2>-->
-        <div class="email-item pure-g">
-            <div class="pure-u">
-                <img class="email-avatar" alt="Yahoo! News&#x27; avatar" height="64" width="64" src="../../img/common/carpeta.png">
-            </div>
-
-            <div class="pure-u-3-4">
-                <!--<h5 class="email-name">{{username}}</h5>
-                <h4 class="email-subject">{{subject}}</h4>-->
-                <a href="/PHPDocumentos/Carpeta/{{IdCarpeta}}">{{Descripcion}}</a>
-            </div>
-        </div>
-        
-        {{/ carpetas}}
+<div id="directorio" class="col-md-2">
+    <div class="acciones">
+        <a href="#"><i class="fa fa-trash-o fa-lg derecha accion"></i></a>
+        <a href="#"><i class="fa fa-pencil-square-o fa-lg derecha accion"></i></a>
+        <a href="#"><i class="fa fa-plus fa-lg derecha accion"></i></a>
     </div>
+    <!--<h2>Carpeta</h2>-->
+    <div class="carpetas">{{# carpetas}}
+        <a href="/PHPDocumentos/Carpeta/{{IdCarpeta}}">
+        <div class="pure-u carpeta">
+            <div class="col-md-1">
+            <i class="fa fa-folder fa-2x"></i>
+                </div>
+                <div class="col-md-10 nombre">
+        {{Descripcion}}
+        </div>
+        </div>
+        </a>
+        <br/>{{/ carpetas}}</div>
+</div>

@@ -1,0 +1,48 @@
+/*CARPETAS*/
+
+#directorio{
+	background-color: #eee;
+	height: 100%;
+	padding:0!important;
+	border-right: 1px solid #ccc;
+	margin-top:80px;
+	position:fixed;
+	overflow-y: auto;
+	
+}
+
+.acciones{
+	height: 40px;
+	border-bottom: 1px solid #ccc;
+}
+
+.accion{
+	margin-right: 10px;
+	margin-top: 14px;
+}
+
+.carpeta{
+	 width: 100%;
+	 padding-top: 10px;
+	 border-bottom: 1px solid #ccc;
+	 padding-bottom: 10px;
+}
+
+.carpeta .nombre{
+	padding-top: 5px;
+	color:black!important;
+	padding-right: 0px!important;
+	margin-left: 10px;
+}
+
+.carpeta i{
+	color:burlywood!important;
+}
+
+.carpeta:hover,
+.carpeta:focus{
+	
+	border-right: 5px solid #888;
+	background-color: #ccc;
+	
+}

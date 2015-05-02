@@ -14,7 +14,7 @@ class MiUnidadHandler {
 		));
 		
 		echo $mstch->render('miunidad', array(
-     	//'carpetas' => $carpetas,
+     	'carpetas' => $carpetas,
      	'grupos' => $grupos,
      	'etiquetas' => $etiquetas));
 		 
