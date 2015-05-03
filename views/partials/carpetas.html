@@ -3,9 +3,16 @@
         <a href="#"><i class="fa fa-trash-o fa-lg derecha accion"></i></a>
         <a href="#"><i class="fa fa-pencil-square-o fa-lg derecha accion"></i></a>
         <a href="#"><i class="fa fa-plus fa-lg derecha accion"></i></a>
+
     </div>
     <!--<h2>Carpeta</h2>-->
-    <div class="carpetas">{{# carpetas}}
+    
+    
+    {{# migas}}
+    	<a href="/PHPDocumentos/Carpeta/{{Id}}">>>{{Carpeta}}<a>
+    {{/ migas}}	
+    
+     <div class="carpetas">{{# carpetas}}
         <a href="/PHPDocumentos/Carpeta/{{IdCarpeta}}">
         <div class="pure-u carpeta">
             <div class="col-md-1">

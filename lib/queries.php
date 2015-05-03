@@ -1,10 +1,17 @@
 <?php
 
-function get_carpetas($idUsuario) {
-    $query = SQLite::getInstance()->query('SELECT * FROM TbCarpeta where IdUsuario=:idUsuario');
+function get_carpetas($idUsuario,$idCarpetaPadre) {
+    $query = SQLite::getInstance()->query('SELECT * FROM TbCarpeta where IdUsuario=:idUsuario and 				              								IdCarpetaPadre=:idCarpetaPadre');
     $query->bindValue(':idUsuario', $idUsuario, PDO::PARAM_INT);
+	$query->bindValue(':idCarpetaPadre', $idCarpetaPadre, PDO::PARAM_INT);
     //return $query->fetchAll();
     $query->execute();
+    return $query->fetchAll(PDO::FETCH_ASSOC);
+}
+function get_DescripcionCarpeta($idCarpeta) {
+    $query = SQLite::getInstance()->query("SELECT Descripcion FROM TbCarpeta where IdCarpeta=:idCarpeta");
+	 $query->bindValue(':idCarpeta', $idCarpeta, PDO::PARAM_INT);
+     $query->execute();
     return $query->fetchAll(PDO::FETCH_ASSOC);
 }
 
