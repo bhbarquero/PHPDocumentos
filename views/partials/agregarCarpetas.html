@@ -1,0 +1,24 @@
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="header">
+				<h2>Agregar Nueva Carpeta </h2>
+			</div>
+			<form class="pure-form pure-form-aligned" method="POST" action="/PHPDocumentos/AddCarpeta/">
+			    <fieldset>
+			    <legend class="scheduler-border">Nuevos datos</legend>
+			        <div class="pure-control-group">
+			            <label for="Descripcion">Descripcion:</label>
+			            <input name="descripcion" type="text" placeholder="Descripción" required>
+			        </div>
+			    </fieldset>
+			    <div class="cf footer">
+				    <a href="/PHPDocumentos/MiUnidad/"><button type="button"class="pure-button pure-button-secondary">Cancel</button></a>
+				    <button type="submit" style="float:right;" class="pure-button pure-button-primary">Submit</button>
+			    </div>
+			</form>
+		</div>
+		<div class="overlay"></div>
+    </div>
+  </div>
+</div>

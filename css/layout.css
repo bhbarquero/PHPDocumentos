@@ -31,21 +31,23 @@ This is the parent `<div>` that contains the menu and the content area.
 The content `<div>` is where all your content goes.
 */
 header{
-    height: 73px;
+    height: 80px;
     width: 100%;
     border-bottom: 1px solid silver;
     box-shadow: 0px 5px 2px #888888;
     z-index: 12000;
-    padding-top: 5px;
+    padding-top: 17px;
     color:  #337AB7;
     top:0px;
     position: fixed;
 }
 
 
+
 header h1 {
     margin-top:0!important;
     padding: 5px;
+    
 
 }
  header h2 {
@@ -69,13 +71,6 @@ header h1 {
     margin-right: 15px;
 }
 
-#migas{
-    color:black!important;
-}
-
-#migas a{
-        color:black!important;
-}
 
 
 /*
@@ -94,7 +89,7 @@ appears on the left side of the page.
     background: #191818;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    margin-top:73px;
+    margin-top:80px;
     background-color: #eee;
     border-right: 5px solid #ccc;
 }

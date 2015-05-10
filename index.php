@@ -14,6 +14,7 @@ require("handlers/carpeta_handler.php");
 require("handlers/grupos_handler.php");
 require("handlers/integrantes_handler.php");
 require("handlers/etiquetas_handler.php");
+require("handlers/agregarCarpeta_handler.php");
 
 /*LIBRERIAS REQUERIDAS*/
 require("lib/markdown.php");
@@ -44,5 +45,6 @@ Toro::serve(array(
     "/PHPDocumentos/Carpeta/:alpha" => "CarpetaHandler",
     "/PHPDocumentos/MisGrupos/:alpha" => "GruposHandler",
     "/PHPDocumentos/MisEtiquetas/:alpha" => "EtiquetasHandler",
-    "/PHPDocumentos/integrante/:alpha" => "IntegrantesHandler"
+    "/PHPDocumentos/integrante/:alpha" => "IntegrantesHandler",
+    "/PHPDocumentos/AddCarpeta/" => "CarpetaHandler2"
 ));

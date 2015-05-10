@@ -1,5 +1,23 @@
 <?php
 
+function add_Carpeta($descripcion,$idUsuario,$idCarpetaPadre) {
+    $query = SQLite::getInstance()->prepare("insert into TbCarpeta (Descripcion,IdUsuario,IdCarpetaPadre)
+                       values (:descripcion,:idUsuario,:idCarpetaPadre)");
+    $query->bindValue(':descripcion', $descripcion, PDO::PARAM_STR);
+    $query->bindValue(':idUsuario', $idUsuario, PDO::PARAM_INT);
+    $query->bindValue(':idCarpetaPadre', $idCarpetaPadre, PDO::PARAM_INT);
+    return $query->execute();
+    //return $query->fetch(PDO::FETCH_ASSOC);
+     //return $query->fetchAll();
+}
+function delete_Carpeta($idCarpeta) {
+    $query = SQLite::getInstance()->prepare("delete from TbCarpeta where IdCarpeta =:idCarpeta");
+    $query->bindValue(':idCarpeta', $idCarpeta, PDO::PARAM_INT);
+    return $query->execute();
+    //return $query->fetch(PDO::FETCH_ASSOC);
+     //return $query->fetchAll();xattr_get(filename, name)
+}
+
 function get_carpetas($idUsuario,$idCarpetaPadre) {
     $query = SQLite::getInstance()->query('SELECT * FROM TbCarpeta where IdUsuario=:idUsuario and 				              								IdCarpetaPadre=:idCarpetaPadre');
     $query->bindValue(':idUsuario', $idUsuario, PDO::PARAM_INT);

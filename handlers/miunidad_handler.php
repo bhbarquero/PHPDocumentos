@@ -3,6 +3,7 @@
 class MiUnidadHandler {
     function get() {
 		$CarpetaPadre=0;
+		$_SESSION["carpetaPadre"]=$CarpetaPadre;
 		//$MigasPan =$_SESSION['MigasPan'];	
 		$MigasPan = "0-Mi Unidad";
 		//array_push($MigasPan,array("Id" => "0", "Carpeta" => "Mi Unidad"));
@@ -18,14 +19,14 @@ class MiUnidadHandler {
 				"Carpeta" => "Mi Unidad");
 		
 		echo $mstch->render('header',array(
-			'usuario' => $usuario,
-			'migas' => $MigasArray
+			'usuario' => $usuario
 		));
 		
 		echo $mstch->render('miunidad', array(
      	'carpetas' => $carpetas,
      	'grupos' => $grupos,
-     	'etiquetas' => $etiquetas));
+     	'etiquetas' => $etiquetas,
+		'migas' => $MigasArray));
 		 
 		 echo $mstch->render('footer');
 
