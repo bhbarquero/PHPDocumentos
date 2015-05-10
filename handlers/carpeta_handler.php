@@ -1,10 +1,10 @@
 <?php
 class CarpetaHandler {
-    function get($idCarpeta) {
+	function get($idCarpeta) {
 		global $mstch;
 
 		if(isset($_SESSION["usuarioId"])){
-				
+			
 			$carpetas=get_carpetas($_SESSION["usuarioId"],$idCarpeta);
 			$usuario = $_SESSION["usuario"];
 			$archivos=get_archivos($idCarpeta);
@@ -13,9 +13,7 @@ class CarpetaHandler {
 			$MigasPan = $_SESSION['MigasPan'];
 			$desCarpeta = get_DescripcionCarpeta($idCarpeta);	
 			
-			echo $mstch->render('header',array(
-				'usuario'=>$usuario
-			));
+			
 			if($idCarpeta!=0)
 			{
 				$bandera=0;
@@ -28,15 +26,15 @@ class CarpetaHandler {
 					if($bandera==0 and $vectorAux2[0]!= $idCarpeta)
 					{
 						if($MigasPan == "")
-						{$MigasPan = $vectorAux2[0]."-".$vectorAux2[1];}
+							{$MigasPan = $vectorAux2[0]."-".$vectorAux2[1];}
 						else
-						{$MigasPan = $MigasPan.";".$vectorAux2[0]."-".$vectorAux2[1];}
+							{$MigasPan = $MigasPan.";".$vectorAux2[0]."-".$vectorAux2[1];}
 						
 					}
 					else
 					{
 						if($vectorAux2[0]== $idCarpeta)
-						{$bandera=1;}
+							{$bandera=1;}
 					}
 					
 					
@@ -57,9 +55,9 @@ class CarpetaHandler {
 				$vectorMigasPan = array();	
 				foreach($vectorMigas as $valor){
 					$vectorAux= explode("-",$valor);
-					array_push($vectorMigasPan,array("Id"=>$vectorAux[0],"Carpeta"=>$vectorAux[1],));
-	
-					}
+					array_push($vectorMigasPan,array("Id"=>$vectorAux[0],"Carpeta"=>$vectorAux[1].' / ',));
+					
+				}
 			}
 			else
 			{
@@ -67,20 +65,25 @@ class CarpetaHandler {
 				$_SESSION['MigasPan']= $MigasPanAux;
 				$vectorMigasPan=array();
 				$vectorMigasPan = array(
-				"Id" => "0",
-				"Carpeta" => "Mi Unidad");
+					"Id" => "0",
+					"Carpeta" => "Mi Unidad");
 			}
+
+			echo $mstch->render('header',array(
+				'usuario'=>$usuario,
+				'migas' => $vectorMigasPan
+				));
+
 			echo $mstch->render('miunidad', array(
-	     	'carpetas' => $carpetas,
-	     	'archivos' => $archivos,
-	     	'grupos' => $grupos,
-	     	'etiquetas' => $etiquetas,
-			'migas' => $vectorMigasPan));
-			 
-			 echo $mstch->render('footer');
+				'carpetas' => $carpetas,
+				'archivos' => $archivos,
+				'grupos' => $grupos,
+				'etiquetas' => $etiquetas));
+			
+			echo $mstch->render('footer');
 		}
 		else
 			header('Location:/PHPDocumentos/');
-	
-    	}
+		
+	}
 }
