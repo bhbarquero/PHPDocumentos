@@ -1,4 +1,4 @@
-<div id="directorio" class="col-md-2">
+<div id="directorio" class="col-md-3">
     <div class="acciones">
         <a href="#"><i class="fa fa-trash-o fa-lg derecha accion"></i></a>
         <a href="#"><i class="fa fa-pencil-square-o fa-lg derecha accion"></i></a>
@@ -6,22 +6,17 @@
 
     </div>
     <!--<h2>Carpeta</h2>-->
-    
-    
-    {{# migas}}
-    	<a href="/PHPDocumentos/Carpeta/{{Id}}">>>{{Carpeta}}<a>
-    {{/ migas}}	
-    
-     <div class="carpetas">{{# carpetas}}
+
+    <div class="carpetas">{{# carpetas}}
         <a href="/PHPDocumentos/Carpeta/{{IdCarpeta}}">
-        <div class="pure-u carpeta">
-            <div class="col-md-1">
-            <i class="fa fa-folder fa-2x"></i>
+            <div class="pure-u carpeta">
+                <div class="col-md-1">
+                    <i class="fa fa-folder fa-2x"></i>
                 </div>
-                <div class="col-md-10 nombre">
-        {{Descripcion}}
-        </div>
-        </div>
+                <div class="col-md-9 nombre">
+                    {{Descripcion}}
+                </div>
+            </div>
         </a>
         <br/>{{/ carpetas}}</div>
-</div>
+    </div>

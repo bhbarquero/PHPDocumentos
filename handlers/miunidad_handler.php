@@ -18,14 +18,14 @@ class MiUnidadHandler {
 				"Carpeta" => "Mi Unidad");
 		
 		echo $mstch->render('header',array(
-			'usuario' => $usuario
+			'usuario' => $usuario,
+			'migas' => $MigasArray
 		));
 		
 		echo $mstch->render('miunidad', array(
      	'carpetas' => $carpetas,
      	'grupos' => $grupos,
-     	'etiquetas' => $etiquetas,
-		'migas' => $MigasArray));
+     	'etiquetas' => $etiquetas));
 		 
 		 echo $mstch->render('footer');
 
